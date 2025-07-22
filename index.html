@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BHC Premium: O tratamento capilar revolucionário com resultados em 30 dias. Compre agora com desconto!">
+  <title>BHC Premium - Rejuvenescimento Capilar Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6a4bff;
+      --primary-dark: #4d2df3;
+      --secondary: #25D366;
+      --dark: #2c2c2c;
+      --light: #ffffff;
+      --gray: #f5f5f7;
+      --red: #e63946;
+      --green: #2a9d8f;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--gray);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    /* Header Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--light);
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      animation: pulse 15s infinite linear;
+    }
+    
+    @keyframes pulse {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    
+    .badge {
+      display: inline-block;
+      background: var(--light);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Video Section */
+    .video-section {
+      padding: 2rem 1rem;
+      background: var(--light);
+      text-align: center;
+    }
+    
+    .video-container {
+      position: relative;
+      max-width: 640px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    
+    .video-container::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Benefits */
+    .benefits {
+      padding: 3rem 1rem;
+      background: var(--gray);
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .benefit-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .benefit-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .benefit-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    /* Pricing */
+    .pricing {
+      padding: 3rem 1rem;
+      background: var(--light);
+      text-align: center;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: var(--dark);
+      opacity: 0.8;
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .pricing-card {
+      background: var(--gray);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .product-image {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      margin: -50px auto 15px;
+      display: block;
+      filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+      border: 1px solid #f1f1f1;
+      border-radius: 8px;
+      background: white;
+      padding: 5px;
+    }
+    
+    .pricing-card.popular {
+      border: 2px solid var(--primary);
+      transform: scale(1.02);
+    }
+    
+    .popular-badge {
+      position: absolute;
+      top: 10px;
+      right: -30px;
+      background: var(--primary);
+      color: var(--light);
+      padding: 0.3rem 1.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transform: rotate(45deg);
+      width: 120px;
+      text-align: center;
+    }
+    
+    .last-chance-badge {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      right: 0;
+      background: var(--red);
+      color: white;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+      z-index: 2;
+      animation: pulse 2s infinite;
+    }
+    
+    .pricing-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .price {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--red);
+      margin-bottom: 1rem;
+    }
+    
+    .price small {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+    
+    .economy {
+      color: var(--green);
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      text-align: left;
+      padding-left: 1rem;
+    }
+    
+    .pricing-features li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .pricing-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--light);
+      border: none;
+      padding: 0.8rem 1.8rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      width: 100%;
+    }
+    
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(106, 75, 255, 0.3);
+    }
+    
+    /* WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--secondary);
+      color: var(--light);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: var(--light);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: var(--light);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      opacity: 1;
+    }
+    
+    .copyright {
+      opacity: 0.5;
+      font-size: 0.9rem;
+    }
+    
+    /* Animations */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .price {
+        font-size: 1.8rem;
+      }
+      
+      .product-image {
+        width: 120px;
+        height: 120px;
+        margin: -40px auto 10px;
+      }
+      
+      .video-container iframe {
+        height: 400px;
+      }
+      
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">MAIS VENDIDO 2025</span>
+      <h1>Transforme Seu Cabelo em Apenas 30 Dias</h1>
+      <p>O tratamento capilar revolucionário que está mudando a vida de milhares de brasileiros</p>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <div class="video-container">
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/fis9QA9o1CU" 
+        title="BHC Premium - Transformação Capilar" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        loading="lazy"
+        aria-label="Vídeo demonstrativo dos resultados do BHC Premium">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits">
+    <h2 class="section-title">Por Que Escolher BHC Premium?</h2>
+    <p class="section-subtitle">Resultados comprovados por especialistas e milhares de clientes satisfeitos</p>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>Resultados em 30 Dias</h3>
+        <p>Melhora visível na textura, volume e brilho dos fios em menos de 1 mês</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h3>100% Natural</h3>
+        <p>Fórmula livre de parabenos, sulfatos e ingredientes agressivos</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <h3>Garantia de Qualidade</h3>
+        <p>Produzido em laboratório certificado pela ANVISA</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-truck"></i>
+        </div>
+        <h3>Entrega Rápida</h3>
+        <p>Receba em até 5 dias úteis em todo o Brasil</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing">
+    <h2 class="section-title">Escolha Seu Kit</h2>
+    <p class="section-subtitle">Quanto mais potes, maior o desconto!</p>
+    
+    <div class="pricing-grid">
+      <!-- Kit 1 Pote -->
+      <div class="pricing-card">
+        <img src="IMG_0089.jpeg" alt="BHC Premium - 1 Pote (60 cápsulas de 500mg)" class="product-image">
+        <h3>1 Pote</h3>
+        <div class="price">R$ 197<small>,00</small></div>
+        <p class="economy">60 cápsulas de 500mg</p>
+        <ul class="pricing-features">
+          <li>Tratamento para 1 mês</li>
+          <li>Frete grátis</li>
+          <li>Suplemento alimentar em cápsulas</li>
+        </ul>
+        <a href="https://app.keedpay.com.br/checkout/2lFecVsYb3e/ErWBDsc6Grl" class="btn" target="_blank" rel="noopener noreferrer">COMPRAR AGORA</a>
+      </div>
+      
+      <!-- Kit 3 Potes -->
+      <div class="pricing-card popular">
+        <div class="popular-badge">POPULAR</div>
+        <img src="IMG_0090.jpeg" alt="BHC Premium - 3 Potes (180 cápsulas)" class="product-image">
+        <h3>3 Potes</h3>
+        <div class="price">R$ 297<small>,00</small></div>
+        <p class="economy">180 cápsulas (60 cada)</p>
+        <ul class="pricing-features">
+          <li>Tratamento para 3 meses</li>
+          <li>Frete grátis</li>
+          <li>E-book exclusivo</li>
+          <li>15% de desconto</li>
+        </ul>
+        <a href="https://app.keedpay.com.br/checkout/mfmL76m4Xdg/ErWBDsc6Grl" class="btn" target="_blank" rel="noopener noreferrer">COMPRAR AGORA</a>
+      </div>
+      
+      <!-- Kit 5 Potes -->
+      <div class="pricing-card">
+        <img src="IMG_0095.jpeg" alt="BHC Premium - 5 Potes (300 cápsulas)" class="product-image">
+        <h3>5 Potes</h3>
+        <div class="price">R$ 397<small>,00</small></div>
+        <p class="economy">300 cápsulas (60 cada)</p>
+        <ul class="pricing-features">
+          <li>Tratamento para 5 meses</li>
+          <li>Frete grátis</li>
+          <li>E-book + guia avançado</li>
+          <li>20% de desconto</li>
+        </ul>
+        <a href="https://app.keedpay.com.br/checkout/vngp6Tzs39r/ErWBDsc6Grl" class="btn" target="_blank" rel="noopener noreferrer">COMPRAR AGORA</a>
+      </div>
+      
+      <!-- Kit 12 Potes -->
+      <div class="pricing-card">
+        <div class="last-chance-badge">ÚLTIMA CHANCE!</div>
+        <img src="IMG_0100.jpeg" alt="BHC Premium - 12 Potes (720 cápsulas) - Últimos Frascos" class="product-image">
+        <h3>12 Potes</h3>
+        <div class="price">R$ 697<small>,00</small></div>
+        <p class="economy">720 cápsulas (60 cada)</p>
+        <ul class="pricing-features">
+          <li>Tratamento para 1 ano</li>
+          <li>Frete grátis</li>
+          <li>E-book + guia avançado</li>
+          <li>30% de desconto</li>
+          <li>Fórmula Premium</li>
+        </ul>
+        <a href="https://entrega.logzz.com.br/pay/meme6yxyr/epsum-bhc-hair-12-potes" class="btn" target="_blank" rel="noopener noreferrer">COMPRAR AGORA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/559188045033" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">Termos de Uso</a>
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Dúvidas</a>
+      <a href="#">Contato</a>
+    </div>
+    <p class="copyright">© 2024 BHC Premium. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // FAQ Accordion (se necessário)
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.classList.toggle('active');
+        
+        const icon = question.querySelector('i');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+      });
+    });
+  </script>
+</body>
+</html>
